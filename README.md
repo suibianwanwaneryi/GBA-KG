@@ -7,7 +7,9 @@ Gut-brain axis knowledge graph(GBA-KG) is a knowledge graph that integrates exis
 ## Cloning and installing 
 
 The setting up of the GBA is easy and might just take a few mintues.To get a copy of the GitHub repository on your local machine, please open a terminal windown and run:  
-`git clone https://github.com/liwenqingi/GBA-KG.git`
+'''
+git clone https://github.com/liwenqingi/GBA-KG.git
+'''
  
 
 | 表头1 | 表头2 | 表头3 |  
