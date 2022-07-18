@@ -26,5 +26,20 @@ Ontology resources can be load into neo4j by `run_kg_creation.py`.The ontology d
 | Ontology | Gene Ontology | https://www.ebi.ac.uk/ols/ontologies/go |
 | Knowledge Graph | Hetionet | https://github.com/hetio/hetionet | 
 ### Literature knowledge acquisition
-Document information can be manually organized into triples and imported. For the currently supported relationships, please refer to the a file. At the same time, we use NLP methods to accelerate this process.  
-![Process](https://github.com/liwenqingi/GBA-KG/blob/main/NLP_process.png)
+Literature information can be manually organized into triples and imported. For the currently supported relationships, please refer to the `semmedb_data/origin/relation.csv` file. At the same time, we use NLP methods to accelerate this process.  
+![Process](https://github.com/liwenqingi/GBA-KG/blob/main/NLP_process.png) 
+#### 1.Choose study field
+By specifying field keywords in the `generate_kg_pubmed_abstracts.py` script, the corresponding literature abstracts can be downloaded automatically. Examples can refer to `kg_pubmed_abstracts.csv`.  
+#### 2.Generate training data
+The data used in training comes from [SemMedDB](https://lhncbc.nlm.nih.gov/ii/tools/SemRep_SemMedDB_SKR/SemMedDB_download.html), triples are extracted from `PREDICATION`, and sentence information of triples is extracted from `SENTENCE`.  
+#### 3.Information extraction
+Named entity recognition using [pymetamap](https://github.com/AnthonyMRios/pymetamap) and [BERN2](https://github.com/dmis-lab/BERN2). pymetamap is used to identify microbes, anatomy, Bern2 is used to identify other entity concepts.The module of relation extraction refers to [DeepKE](https://github.com/zjunlp/DeepKE) and the core algorithm is biobert+BiLSTM.We provide the fine-tuned [biobert model](https://drive.google.com/drive/u/0/my-drive).
+#### 4.Cleaning and entity alignment
+Remove entities with unrecognized id and duplicate entities. Match the identified entity id with the id of the corresponding entity library.
+#### 5.Data loading
+Import data into neo4j database.  
+## Acknowledgments
+* [Hetionet](https://github.com/hetio/hetionet)
+* [DeepKE](https://github.com/zjunlp/DeepKE)
+## Contact
+If you have any constructive comments or other ideas, please contact me directly on github or send email to liwenqingi@163.com.
