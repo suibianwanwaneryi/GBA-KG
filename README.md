@@ -12,9 +12,11 @@ git clone https://github.com/liwenqingi/GBA-KG.git
 ```  
 This will create a new folder named "GBA-KG" on your current location. After this, follow the instructions in "Building GBA-KG".  
 ## Building GBA-KG  
-The construction of KG consists of two main steps, the first is to integrate multiple resources, the second is to acquire knowledge from literature and update it.  
+The construction of KG consists of two main steps, the first is to integrate multiple resources, the second is to acquire knowledge from literature and update it. Before building KGs, you should start neo4j docker(build via `Dockerfile`) and bern2 firstly following `run_bern2.sh` and `demo_graphdb_owl_neo4j_3.5.sh`. 
 ### Integrate multiple resources  
-Ontology resources can be load into neo4j by `run_kg_creation.py`.The ontology databases and hetionet knowledge graph provided within the GBA-KG have their own licenses and the use of GBA-KG still requires compliance with these data use restrictions. Please, visit the data sources directly for more information:  
+Ontology resources can be load into neo4j by `run_kg_creation.py`. After running this script, you should get following results via web browser. 
+![neo4j](https://github.com/liwenqingi/GBA-KG/blob/main/neo4j.png)
+The ontology databases and hetionet knowledge graph provided within the GBA-KG have their own licenses and the use of GBA-KG still requires compliance with these data use restrictions. Please, visit the data sources directly for more information:  
 
 | Source type | Source | URL |
 | --- | --- | --- |
