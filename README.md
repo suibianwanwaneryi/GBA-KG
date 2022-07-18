@@ -35,9 +35,9 @@ By specifying field keywords in the `generate_kg_pubmed_abstracts.py` script, th
 #### 2.Generate training data
 The data used in training comes from [SemMedDB](https://lhncbc.nlm.nih.gov/ii/tools/SemRep_SemMedDB_SKR/SemMedDB_download.html), triples are extracted from `PREDICATION`, and sentence information of triples is extracted from `SENTENCE`. We provide a processed dataset `semmedb_data/origin`, you can skip directly to the data generation stage if study field matches.
 #### 3.Information extraction
-Information extraction contains NER and RE,there is a packed script `run_nlp_kg.py` that can be used directly.Named entity recognition using [pymetamap](https://github.com/AnthonyMRios/pymetamap) and [BERN2](https://github.com/dmis-lab/BERN2). pymetamap is used to identify microbes, anatomy, BERN2 is used to identify other entity concepts.The module of relation extraction refers to [DeepKE](https://github.com/zjunlp/DeepKE) and the core algorithm is biobert+BiLSTM.We provide the fine-tuned [biobert model](https://drive.google.com/drive/u/0/my-drive) so you can skip model-training stage.
+Information extraction contains NER and RE,there is a packed script `run_nlp_kg.py` that can be used directly.Named entity recognition using [pymetamap](https://github.com/AnthonyMRios/pymetamap) and [BERN2](https://github.com/dmis-lab/BERN2). pymetamap is used to identify microbes, anatomy, BERN2 is used to identify other entity concepts.The module of relation extraction refers to [DeepKE](https://github.com/zjunlp/DeepKE) and the core algorithm is biobert+BiLSTM.We provide the fine-tuned [biobert model](https://drive.google.com/drive/u/0/my-drive) so you can skip model-training stage. Examples can refer to `kg_pubmed_abstracts.csv.ner.predict`.
 #### 4.Cleaning and entity alignment
-Remove entities with unrecognized id and duplicate entities. Match the identified entity id with the id of the corresponding entity library.
+Remove entities with unrecognized id and duplicate entities. Match the identified entity id with the id of the corresponding entity library.Examples can refer to `kg_pubmed_abstracts.csv.ner.predict.entity_aligned`.
 #### 5.Data loading
 Import data into neo4j database.  
 ## Acknowledgments
