@@ -1,1 +1,1 @@
-# GBA_KG
+# GBA-KG
