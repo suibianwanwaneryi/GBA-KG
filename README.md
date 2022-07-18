@@ -25,3 +25,6 @@ Ontology resources can be load into neo4j by `run_kg_creation.py`.The ontology d
 | Ontology | Uber-anatomy ontology | https://www.ebi.ac.uk/ols/ontologies/uberon |
 | Ontology | Gene Ontology | https://www.ebi.ac.uk/ols/ontologies/go |
 | Knowledge Graph | Hetionet | https://github.com/hetio/hetionet | 
+### Literature knowledge acquisition
+Document information can be manually organized into triples and imported. For the currently supported relationships, please refer to the a file. At the same time, we use NLP methods to accelerate this process.  
+![Process](https://github.com/liwenqingi/GBA-KG/blob/main/NLP_process.png)
