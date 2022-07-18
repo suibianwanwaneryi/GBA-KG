@@ -10,7 +10,7 @@ The setting up of the GBA is easy and might just take a few mintues.To get a cop
 ```
 git clone https://github.com/liwenqingi/GBA-KG.git
 ```  
-This will create a new folder named "GBA-KG" on your current location. After this, follow the instructions in "Building GBA-KG".  
+This will create a new folder named "GBA-KG" on your current location. After this, follow the instructions in "Building GBA-KG". If you want to use following NLP tools, check the `requirements.txt` for detail. 
 ## Building GBA-KG  
 The construction of KG consists of two main steps, the first is to integrate multiple resources, the second is to acquire knowledge from literature and update it. Before building KGs, you should start neo4j docker(build via `Dockerfile`) and bern2 firstly following `run_bern2.sh` and `demo_graphdb_owl_neo4j_3.5.sh`. 
 ### Integrate multiple resources  
